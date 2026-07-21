@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel
 import requests
@@ -20,7 +21,7 @@ class ProxyRequest(BaseModel):
     method: str
     url: str
     headers: dict = {}
-    body: dict | None = None
+    body: Optional[dict] = None
 
 
 @app.post("/proxy")
