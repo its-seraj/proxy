@@ -24,7 +24,7 @@ class ProxyRequest(BaseModel):
     body: Optional[dict] = None
 
 
-@app.post("/proxy")
+@app.post("/")
 def proxy(
     req: ProxyRequest,
     x_api_key: str = Header(default="")
